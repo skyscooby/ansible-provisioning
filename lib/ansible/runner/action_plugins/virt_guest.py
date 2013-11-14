@@ -33,7 +33,7 @@ class ActionModule(object):
 
         # template the source data locally & transfer
         try:
-            xmldata = utils.template_from_file(self.runner.basedir, src, inject)
+            xmldata = utils.template.template_from_file(self.runner.basedir, src, inject)
         except Exception, e:
             result = dict(failed=True, msg='%s (%s)' % (e, src))
             return ReturnData(conn=conn, comm_ok=False, result=result)
